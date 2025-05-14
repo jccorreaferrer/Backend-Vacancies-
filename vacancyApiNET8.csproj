@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Custom\JWT\" />
-    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
