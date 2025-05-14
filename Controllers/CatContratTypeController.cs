@@ -11,7 +11,7 @@ namespace vacancyApiNET8.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [EnableCors("ReglasCors")]
-    public class CatContratTypeController : Controller, ICatContractType
+    public class CatContratTypeController : Controller, ICatalog
     {
         /*
          CRUD
