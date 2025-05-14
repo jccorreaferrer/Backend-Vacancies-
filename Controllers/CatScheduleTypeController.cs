@@ -11,19 +11,18 @@ namespace vacancyApiNET8.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [EnableCors("ReglasCors")]
-    public class CatContratTypeController : Controller, ICatalog
+    public class CatScheduleTypeController : Controller
     {
         /*
-         CRUD
-            CREATE
+        CRUD
+           CREATE
             READ
             UPDATE
             DELETE
         */
-            private readonly VacancyTrackerContext _dbContext;//el nombre de nuestro contexto
+        private readonly VacancyTrackerContext _dbContext;//el nombre de nuestro contexto
 
-
-        public CatContratTypeController(VacancyTrackerContext context)
+        public CatScheduleTypeController(VacancyTrackerContext context)
         {
             this._dbContext = context;
         }
@@ -38,10 +37,10 @@ namespace vacancyApiNET8.Controllers
         {
             try
             {
-                var resultList = await this._dbContext.CatContractTypes
+                var resultList = await this._dbContext.CatStatuses
                     .OrderBy(c => c.Notation)
                     .ToListAsync();
-                
+
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "OK", Response = resultList });
 
             }
@@ -50,5 +49,6 @@ namespace vacancyApiNET8.Controllers
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.ToString() });
             }
         }
+
     }
 }
